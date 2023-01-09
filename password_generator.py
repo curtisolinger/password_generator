@@ -11,23 +11,23 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 character_type = ['letters', 'numbers', 'symbols']
 letters_count = numbers_count = symbols_count = 0
-password = []
+password = ""
 password_length = nr_letters + nr_symbols + nr_numbers
 
 for i in range(password_length):
   while True:
     char = random.choice(character_type)
     if char == 'letters' and letters_count < nr_letters:
-      password.append(random.choice(letters))
+      password += random.choice(letters)
       letters_count += 1
       break
     elif char == 'symbols' and symbols_count < nr_symbols:
-      password.append(random.choice(symbols))
+      password += random.choice(symbols)
       symbols_count += 1
       break
     elif char == 'numbers' and numbers_count < nr_numbers:
-      password.append(random.choice(numbers))
+      password += random.choice(numbers)
       numbers_count += 1
       break
 
-print(''.join(password))
+print(password)
